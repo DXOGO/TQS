@@ -1,3 +1,3 @@
-# Portfólio individual para as aulas práticas de TQS
+# Individual portfolio for practical Testing and Software Quality classes
 
-Diogo Cruz, nmec: 98595
+[Diogo Cruz](https://github.com/DXOGO), nmec: 98595
