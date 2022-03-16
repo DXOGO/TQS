@@ -1,54 +1,46 @@
 package com.dxogo;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
-public class TqsStack<T>{
+public class TqsStack<T> {
 
-private final ArrayList<T> list = new ArrayList<>();
+  private LinkedList<T> stack = new LinkedList<T>();
   private Integer bound = null;
 
-  public TqsStack() {}
+  public TqsStack() {
+    this.stack = new LinkedList<>();
+  };
 
-  public TqsStack(int bound) { this.bound = bound; }
+  public TqsStack(int bound) {
+    this.stack = new LinkedList<>();
+    this.bound = bound;
+  };
 
-  // push(x): add an item on the top
-  public void push(T x) {
-    if (size() == bound) throw new IllegalStateException();
-    list.add(x);
+  public void push(T element) {
+    if ((this.bound != null) && (this.size() > this.bound - 1) ) {
+        throw new IllegalStateException("Error pushing element!");
+    
+    } else { stack.add(element); }
   }
 
-  // pop: remove the item at the top
-  public T pop() { 
-    T elem;
-
-    try {
-      elem = list.remove(size() - 1);
-    } catch (IndexOutOfBoundsException e) {
-      throw new NoSuchElementException();
-    }
-
-    return elem;
+  public T pop() {
+    if (this.stack.isEmpty()) { 
+      throw new NoSuchElementException("Error popping element"); 
+  
+    } else { return this.stack.pop(); }
   }
 
-  // peek: return the item at the top (without removing it)
   public T peek() {
-    T elem;
-
-    try {
-      elem = list.get(size() - 1);
-    } catch (IndexOutOfBoundsException e) {
-      throw new NoSuchElementException();
-    }
-
-    return elem;
+    if (this.stack.isEmpty()) { throw new NoSuchElementException("Error peaking element");
+    
+    } else { return this.stack.getLast(); }
   }
 
-  // size: return the number of items in the stack
-  public int size() { return list.size(); }
+  public int size() { return this.stack.size(); }
 
-  // isEmpty: return whether the stack has no items
-  public boolean isEmpty() { return list.isEmpty(); }
+  public boolean isEmpty() { return this.size() == 0; }
 
+  public void clear() { this.stack.clear(); }
 
 }
