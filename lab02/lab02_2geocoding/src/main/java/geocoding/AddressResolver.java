@@ -6,7 +6,6 @@
 package geocoding;
 
 import connection.ISimpleHttpClient;
-import demo.MainGeocode;
 import org.apache.http.ParseException;
 import org.apache.http.client.utils.URIBuilder;
 import org.json.simple.JSONArray;
@@ -34,18 +33,24 @@ public class AddressResolver {
         this.httpClient = httpClient;
     }
 
+    public Optional<Address> findAddressForLocation(double latitude, double longitude)
+            throws URISyntaxException, IOException, ParseException, org.json.simple.parser.ParseException {
 
-    public Optional<Address> findAddressForLocation(double latitude, double longitude) throws URISyntaxException, IOException, ParseException, org.json.simple.parser.ParseException {
-
-        if ( latitude > 90 || latitude < -90 || longitude > 180 || longitude < -180 ) { throw new IllegalArgumentException(); }
+        if (latitude > 90 || latitude < -90 || longitude > 180 || longitude < -180) {
+            throw new IllegalArgumentException();
+        }
 
         String apiKey = ConfigUtils.getPropertyFromConfig("mapquest_key");
 
         URIBuilder uriBuilder = new URIBuilder("http://open.mapquestapi.com/geocoding/v1/reverse");
         uriBuilder.addParameter("key", apiKey);
-        uriBuilder.addParameter("location", (new Formatter()).format(Locale.US, "%.6f,%.6f", latitude, longitude).toString());
+
+        Formatter f = new Formatter();
+        uriBuilder.addParameter("location",
+                f.format(Locale.US, "%.6f,%.6f", latitude, longitude).toString());
         uriBuilder.addParameter("includeRoadMetadata", "true");
 
+        f.close();
 
         String apiResponse = this.httpClient.doHttpGet(uriBuilder.build().toString());
         Logger.getLogger(this.getClass().getName()).log(Level.INFO, apiResponse);
@@ -66,7 +71,6 @@ public class AddressResolver {
             String state = (String) address.get("adminArea3");
             String zip = (String) address.get("postalCode");
             return Optional.of(new Address(road, city, state, zip, null));
-
 
         }
     }
