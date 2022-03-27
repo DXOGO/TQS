@@ -1,6 +1,5 @@
 package tqsdemo.employeemngr.boundary;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,22 +21,23 @@ public class EmployeeRestController {
 
     /**
      * Using constructor Injection instead of @autowired
-     * when using a constructor to set injected properties, you do not have to provide the autowire annotation
+     * when using a constructor to set injected properties, you do not have to
+     * provide the autowire annotation
+     * 
      * @param employeeService
      */
     public EmployeeRestController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
-    @PostMapping("/employees" )
+    @PostMapping("/employees")
     public ResponseEntity<Employee> createEmployee(@RequestBody EmployeeDTO employee) {
         HttpStatus status = HttpStatus.CREATED;
-        Employee saved = employeeService.save( employee.toEmployeeEntity() );
+        Employee saved = employeeService.save(employee.toEmployeeEntity());
         return new ResponseEntity<>(saved, status);
     }
 
-
-    @GetMapping(path="/employees" )
+    @GetMapping(path = "/employees")
     public List<Employee> getAllEmployees() {
         return employeeService.getAllEmployees();
     }
