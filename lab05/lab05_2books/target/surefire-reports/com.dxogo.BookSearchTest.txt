@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.dxogo.BookSearchTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.267 s <<< FAILURE! - in com.dxogo.BookSearchTest
-Book search.Book search - Search books by publication year  Time elapsed: 0.119 s  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.257 s <<< FAILURE! - in com.dxogo.BookSearchTest
+Book search.Book search - Search books by publication year  Time elapsed: 0.114 s  <<< ERROR!
 io.cucumber.junit.platform.engine.UndefinedStepException: 
 The step 'a book with the title 'One good book', written by 'Anonymous', published in 2013-03-14' and 2 other step(s) are undefined.
 You can implement these steps using the snippet(s) below:

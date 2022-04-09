@@ -13,7 +13,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class BookSearchSteps {
-    private Library library = new Library();
+     Library library = new Library();
     private List<Book> result = new ArrayList<>();
 
     @ParameterType("([0-9]{4})-([0-9]{2})-([0-9]{2})")
