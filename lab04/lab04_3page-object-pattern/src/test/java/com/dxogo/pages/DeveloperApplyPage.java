@@ -6,8 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class DeveloperApplyPage {
-    private WebDriver driver;
-
     @FindBy(tagName = "h1")
     WebElement heading;
 
@@ -29,8 +27,6 @@ public class DeveloperApplyPage {
 
     //Constructor
     public DeveloperApplyPage(WebDriver driver){
-        this.driver=driver;
-
         //Initialise Elements
         PageFactory.initElements(driver, this);
     }

@@ -7,8 +7,6 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
-    private WebDriver driver;
-
     //Page URL
     private static String PAGE_URL="https://www.toptal.com";
 
@@ -23,7 +21,6 @@ public class HomePage {
 
     //Constructor
     public HomePage(WebDriver driver){
-        this.driver=driver;
         driver.get(PAGE_URL);
         //Initialise Elements
         PageFactory.initElements(driver, this);

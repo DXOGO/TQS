@@ -1,11 +1,9 @@
-/* package com.dxogo;
+package com.dxogo;
 
 import io.github.bonigarcia.seljup.SeleniumJupiter;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -33,6 +31,6 @@ public class HeadlessBrowserTest {
     @Test
     void testWithHeadless(HtmlUnitDriver driver) {
         driver.get("http://www.seleniumhq.org/");
-        assertThat(driver.getTitle(), containsString("Selenium-Jupiter"));
+        assertThat(driver.getTitle(), containsString("Selenium"));
     }
-} */
+}
