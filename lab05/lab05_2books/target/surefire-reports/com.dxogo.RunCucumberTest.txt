@@ -1,19 +1,29 @@
 -------------------------------------------------------------------------------
-Test set: com.dxogo.BookSearchTest
+Test set: com.dxogo.RunCucumberTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.257 s <<< FAILURE! - in com.dxogo.BookSearchTest
-Book search.Book search - Search books by publication year  Time elapsed: 0.114 s  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.271 s <<< FAILURE! - in com.dxogo.RunCucumberTest
+Book search.Book search - Search books by publication year  Time elapsed: 0.125 s  <<< ERROR!
 io.cucumber.junit.platform.engine.UndefinedStepException: 
-The step 'a book with the title 'One good book', written by 'Anonymous', published in 2013-03-14' and 2 other step(s) are undefined.
+The step 'a book with the title 'One good book', written by 'Anonymous', published in 14 March 2013' and 3 other step(s) are undefined.
 You can implement these steps using the snippet(s) below:
 
-@Given("a book with the title {string}, written by {string}, published in {int}-{int}-{int}")
-public void a_book_with_the_title_written_by_published_in(String string, String string2, Integer int1, Integer int2, Integer int3) {
+@Given("a book with the title {string}, written by {string}, published in {int} March {int}")
+public void a_book_with_the_title_written_by_published_in_march(String string, String string2, Integer int1, Integer int2) {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
-@Given("another book with the title {string}, written by {string}, published in {int}-{int}-{int}")
-public void another_book_with_the_title_written_by_published_in(String string, String string2, Integer int1, Integer int2, Integer int3) {
+@Given("another book with the title {string}, written by {string}, published in {int} August {int}")
+public void another_book_with_the_title_written_by_published_in_august(String string, String string2, Integer int1, Integer int2) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Given("another book with the title {string}, written by {string}, published in {int} January {int}")
+public void another_book_with_the_title_written_by_published_in_january(String string, String string2, Integer int1, Integer int2) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("the customer searches for books published between {int} and {int}")
+public void the_customer_searches_for_books_published_between_and(Integer int1, Integer int2) {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
