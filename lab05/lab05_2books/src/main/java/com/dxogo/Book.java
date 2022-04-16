@@ -1,20 +1,20 @@
 package com.dxogo;
 
-import java.time.LocalDateTime;
+import java.util.Date;
  
 public class Book {
-	private final String title;
-	private final String author;
-	private final LocalDateTime published;
+	private String title;
+	private String author;
+	private Date published;
 
-    public Book(String title, String author, LocalDateTime published) {
+    public Book(String title, String author, Date date) {
         this.title = title;
         this.author = author;
-        this.published = published;
+        this.published = date;
     }
 
     public String getTitle() {return this.title; }
     public String getAuthor() {return this.author; }
-    public LocalDateTime getPublished() {return this.published; }
+    public Date getPublished() {return this.published; }
 
 }
