@@ -2,4 +2,4 @@
 
 [Diogo Cruz](https://github.com/DXOGO), nmec: 98595
 
-[Midterm Assignment](https://github.com/DXOGO/HW1)
+[Midterm Assignment - COVID19 Incidence Data](https://github.com/DXOGO/HW1)
