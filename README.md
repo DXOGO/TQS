@@ -2,4 +2,4 @@
 
 Diogo Cruz, nMec: 98595
 
-[Midterm Assignment](https://github.com/DXOGO/HW1) - COVID19 Incidence Data
+[Midterm Assignment](https://github.com/DXOGO/covid19-incidence-data_TQS) - COVID19 Incidence Data
