@@ -1,4 +1,4 @@
-# Individual portfolio for Testing and Software Quality practical classes
+# Individual portfolio for the Testing and Software Quality practical classes
 
 Diogo Cruz, nMec: 98595
 
